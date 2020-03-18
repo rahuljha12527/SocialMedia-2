@@ -12,6 +12,7 @@ const userController=require('../controllers/users_controller');
  
  router.post('/create',userController.create);
 
+
  //use passport as a middleware to authenticate
  router.post('/create-session',passport.authenticate(
      'local',
@@ -21,5 +22,6 @@ const userController=require('../controllers/users_controller');
  router.get('/sign-out',userController.destroySession);
 
 
+ router.post('/create-session',userController.createSession);
 
 module.exports=router;
